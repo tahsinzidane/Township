@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= brandName %> - Manage Partners
+    </title>
+</head>
+
+<body>
+    <h1>Manage Partner Images for <%= brandName %>
+    </h1>
+
+    <!-- Form to add a new partner image -->
+    <h2>Add New Partner Image</h2>
+    <form action="/admin/add-partner" method="POST" enctype="multipart/form-data">
+        <label for="file">Select an image to upload:</label>
+        <input type="file" id="file" name="file" required>
+        <button type="submit">Upload Partner Image</button>
+    </form>
+
+    <!-- Section to display existing partner images with delete option -->
+    <h2>Existing Partner Images</h2>
+    <div class="partner-gallery">
+        <% if (partners.length> 0) { %>
+            <% partners.forEach(partner=> { %>
+                <div class="partner-item">
+                    <img src="<%= partner.path %>" alt="Partner Image" style="width: 150px; height: auto;">
+
+                    <!-- Delete button for each partner image -->
+                    <form action="/admin/delete-partner" method="POST" style="display:inline;">
+                        <input type="hidden" name="partnerId" value="<%= partner._id %>">
+                        <button type="submit">Delete Image</button>
+                    </form>
+                </div>
+                <% }) %>
+                    <% } else { %>
+                        <p>No partner images available.</p>
+                        <% } %>
+    </div>
+
+</body>
+
+</html>

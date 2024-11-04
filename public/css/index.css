@@ -1,0 +1,73 @@
+#hero {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.slider {
+    position: relative;
+}
+
+.slide {
+    display: none;
+    width: 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+}
+
+button.prev,
+button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+button.prev {
+    left: 16rem;
+}
+
+button.next {
+    right: 16rem;
+}
+
+
+.shadow {
+    -webkit-box-shadow: 2px 1px 11px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 2px 1px 11px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 2px 1px 11px 0px rgba(0, 0, 0, 0.75);
+}
+
+
+.footer {
+    background-color: #1b2b38;
+    color: #fff;
+    padding: 20px 0;
+    font-size: 14px;
+}
+
+.footer .footer-logo img {
+    max-height: 50px;
+}
+
+.footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.footer .social-icons a {
+    color: #fff;
+    margin-right: 10px;
+    font-size: 18px;
+}
